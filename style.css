@@ -1,0 +1,52 @@
+body {
+    background: skyblue;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    font-size: 75px;
+    margin: 20px auto;
+}
+
+#display {
+    width: 400px;
+    height: 200px;
+    border: solid black 5px;
+    margin: auto;
+}
+
+#colorSuite {
+    width: 100%;
+    height: 100px;
+    /* background-color: red; */
+}
+
+#userColorSuite {
+    width: 100%;
+    height: 100px;
+    display: flex;
+}
+
+.button {
+    width: 100px;
+    height: 100px;
+}
+
+.red {
+    background: red;
+}
+
+.green {
+    background: green;
+}
+
+.yellow {
+    background: yellow;
+}
+
+.blue {
+    background: blue;
+}
