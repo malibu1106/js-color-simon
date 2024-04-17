@@ -12,14 +12,23 @@
     <h1></h1>
 
     <div id="display">
-        <div id="colorSuite"></div>
-        <div id="userColorSuite">
-            <button class="button red"></button>
-            <button class="button green"></button>
-            <button class="button yellow"></button>
-            <button class="button blue"></button>
+        <div id="colorList"></div>
+        <div id="userColorList">
+            <button class="button red" onclick="nextUserColorPicker('red')"></button>
+            <button class="button green" onclick="nextUserColorPicker('green')"></button>
+            <button class="button yellow" onclick="nextUserColorPicker('yellow')"></button>
+            <button class="button blue" onclick="nextUserColorPicker('blue')"></button>
         </div>
     </div>
+
+    <div id="debug">
+    <button onclick="nextColorPicker()">pick next color</button>
+    <button onclick="displayColorList()">display all colors</button>
+    </div>
+    <div id="points">0</div>
+    <div id="colorListDisplay"></div>
+    <div id="userColorListDisplay"></div>
+    
 
    
     
