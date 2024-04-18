@@ -100,6 +100,8 @@ function refreshTableLenght() {
 function startGame() { // on lance le jeu donc
     nextColorPicker(); // on tire une première couleur 
     document.getElementById('startGameButton').style.visibility = "hidden"; // et on cache le bouton start
+    points = 0; // on reset les points
+    document.getElementById('points').innerHTML = "Points : " + points; // on rafraichit l'affichage pour la prochaine game
 }
 
 function resetGame() {
@@ -107,8 +109,6 @@ function resetGame() {
     colorList = new Array(); // on reset le tableau des couleurs à deviner
     document.getElementById('displayMessage').innerHTML = "Perdu ! Vous avez marqué " + points + " points"; // on affiche le message de fin
     document.querySelectorAll(".memo").forEach(e => e.remove());
-    points = 0; // on reset les points
-    document.getElementById('points').innerHTML = "Points : " + points; // on rafraichit l'affichage pour la prochaine game
     document.getElementById('startGameButton').style.visibility = "visible"; // on réaffiche le bouton start
     i = 0; // on reset le tableau colorList
 }
