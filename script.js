@@ -20,13 +20,11 @@ function nextColorPicker() { // on fait une fonction pour remplir le tableau col
         colorList[i] = colors[getRandomInt()]; // Ligne [i] = color random
         console.log("colorlist", i, colorList[i]);
         i++;
+        document.getElementById('displayMessage').innerHTML = none;
         refreshTableLenght();
         displayColorList();
     }
 }
-
-
-
 
 
 
@@ -61,9 +59,9 @@ function nextUserColorPicker(color) {
 
 
 
-        console.log("userColorList", z, userColorList[z]);
+        //console.log("userColorList", z, userColorList[z]);
         refreshTableLenght();
-        document.getElementById('displayMessage').innerHTML = none;
+
         z++;
 
         if (l1 === l2) {
@@ -81,7 +79,13 @@ function compareLists() {
     if (arraysEqual(colorList, userColorList)) {
         points++;
         document.getElementById('points').innerHTML = "Points : " + points;
+        document.getElementById('displayMessage').innerHTML = "Bravo";
         nextColorPicker();
+    }
+    else {
+        document.getElementById('displayMessage').innerHTML = "Perdu ! Vous avez marqué " + points + " points";
+        resetGame();
+
     }
     //document.getElementById('colorListDisplay').innerHTML = "color list : " + colorList;
     //document.getElementById('userColorListDisplay').innerHTML = "user color list : " + userColorList;
@@ -108,5 +112,14 @@ function refreshTableLenght() {
 
 function startGame() {
     nextColorPicker();
+    document.getElementById('startGameButton').style.visibility = "hidden";
 
+}
+function resetGame() {
+    userColorList = new Array();
+    colorList = new Array();
+    points = 0;
+    document.getElementById('points').innerHTML = "Points : " + points;
+    document.getElementById('startGameButton').style.visibility = "visible";
+    i = 0;
 }

@@ -109,7 +109,7 @@ button:hover {
 }
 
 .button:active {
-    transform: scale(4);
+    transform: scale(3);
     opacity: 0.75;
 }
 
