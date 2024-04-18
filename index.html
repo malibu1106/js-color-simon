@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +10,10 @@
 </head>
 <body>
     <h1></h1>
+    <div id="controls">
+        <button id="startGameButton" onclick="startGame()">Start</button>
+        <div id="points">Points : 0</div>
+    </div>
 
     <div id="display">
         <div id="colorList"></div>
@@ -21,13 +25,16 @@
         </div>
     </div>
 
+    <!--
     <div id="debug">
     <button onclick="nextColorPicker()">pick next color</button>
     <button onclick="displayColorList()">display all colors</button>
     </div>
-    <div id="points">0</div>
+    
     <div id="colorListDisplay"></div>
     <div id="userColorListDisplay"></div>
+    -->
+    <div id="displayMessage"></div>
     
 
    

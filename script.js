@@ -5,44 +5,86 @@ let colorList = new Array(); // init tableau
 function getRandomInt() { // on fait une fonction pour tirer un nombre aléatoire
     return Math.floor(Math.random() * 4); // entre 0 et 3
 }
+let none = "";
+let l1 = 0;
+let l2 = 0;
+let cardsLocked = true;
+
+let userColorList = new Array(); // init tableau joueur
+let z = 0;
+
+
 let i = 0;
 function nextColorPicker() { // on fait une fonction pour remplir le tableau colorSuite > listes des couleurs à deviner
     {
         colorList[i] = colors[getRandomInt()]; // Ligne [i] = color random
         console.log("colorlist", i, colorList[i]);
         i++;
+        refreshTableLenght();
+        displayColorList();
     }
 }
+
+
+
+
+
+
 let y = 0;
 function displayColorList() {
+    document.getElementById('colorList').style.scale = "1.5";
+    document.getElementById('colorList').style.transitionDuration = "0.5s";
     setTimeout(function () {
-        document.getElementById('colorList').style.background = "none";
+        document.getElementById('colorList').style.background = "white";
         y++;
+        if (y == colorList.length) {
+            document.getElementById('displayMessage').innerHTML = "A vous de jouer !";
+            document.getElementById('colorList').style.scale = "1";
+            cardsLocked = false;
+        }
         if (y < colorList.length) {
             displayColorList();
         }
-    }, 2000);
+    }, 1500);
     setTimeout(function () {
         document.getElementById('colorList').style.background = colorList[y];
         // console.log(colorList[y]);
-    }, 1000);
+    }, 500);
+    userColorList = Array();
+    z = 0;
 }
-let userColorList = new Array(); // init tableau joueur
-let z = 0;
+
+
 function nextUserColorPicker(color) {
-    userColorList[z] = color;
-    console.log("userColorList", z, userColorList[z]);
-    z++;
-    compareLists();
+    if (cardsLocked != true) {
+        userColorList[z] = color;
+
+
+
+        console.log("userColorList", z, userColorList[z]);
+        refreshTableLenght();
+        document.getElementById('displayMessage').innerHTML = none;
+        z++;
+
+        if (l1 === l2) {
+            compareLists();
+            cardsLocked = true;
+            y = 0;
+        }
+    }
 }
+
+
+
 let points = 0;
 function compareLists() {
     if (arraysEqual(colorList, userColorList)) {
         points++;
-        document.getElementById('points').innerHTML = points;
+        document.getElementById('points').innerHTML = "Points : " + points;
+        nextColorPicker();
     }
-    document.getElementById('colorListDisplay').innerHTML = "color list : " + colorList;
-    document.getElementById('userColorListDisplay').innerHTML = "user color list : " + userColorList;
+    //document.getElementById('colorListDisplay').innerHTML = "color list : " + colorList;
+    //document.getElementById('userColorListDisplay').innerHTML = "user color list : " + userColorList;
 }
 function arraysEqual(arr1, arr2) {
     // Check if the arrays have the same length
@@ -58,3 +100,13 @@ function arraysEqual(arr1, arr2) {
     return true;
 }
 
+function refreshTableLenght() {
+    l1 = colorList.length;
+    l2 = userColorList.length;
+
+}
+
+function startGame() {
+    nextColorPicker();
+
+}
