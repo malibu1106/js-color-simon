@@ -7,8 +7,9 @@ body {
 
 h1 {
     text-align: center;
-    font-size: 75px;
+    font-size: 50px;
     margin: 20px auto;
+    color: white;
 }
 
 #controls {
@@ -71,32 +72,29 @@ h1 {
     border-radius: 12px;
 }
 
-.red {
+.red,
+.cred {
     background: red;
 }
 
-.green {
+.green,
+.cgreen {
     background: green;
 }
 
-.yellow {
+.yellow,
+.cyellow {
     background: yellow;
 }
 
-.blue {
+.blue,
+.cblue {
     background: blue;
 }
 
 p {
     text-align: center;
     font-size: 32px;
-}
-
-#debug {
-    /* border: solid green 2px; */
-    display: flex;
-    justify-content: center;
-    gap: 10px;
 }
 
 button {
@@ -123,4 +121,19 @@ button:hover {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
+}
+
+#displayMemo {
+    width: 400px;
+    height: 100px;
+    margin: auto;
+    display: flex;
+    gap: 4px;
+}
+
+.memo {
+    width: 20px;
+    height: 20px;
+    border: solid white 1px;
+    border-radius: 3px;
 }
