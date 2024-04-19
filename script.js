@@ -11,6 +11,42 @@ let z = 0; // compteur pour le tableau userColorList
 let i = 0; // compteur pour le tableau colorList
 let y = 0; // COmpteur pour l'affichage de l'intégralité du tableau colorlist
 
+// VARIABLES SOUND
+let audioc23a3a = new Audio("sounds/C.wav");
+let audio3ac243 = new Audio("sounds/D.wav");
+let audioc2ab3a = new Audio("sounds/E.wav");
+let audio3a5ac2 = new Audio("sounds/F.wav");
+
+function audioPlay(color) {
+    if (color == "#c23a3a") {
+        audioStop();
+        audioc23a3a.play();
+    }
+    else if (color == "#3ac243") {
+        audioStop();
+        audio3ac243.play();
+    }
+    else if (color == "#c2ab3a") {
+        audioStop();
+        audioc2ab3a.play();
+    }
+    else if (color == "#3a5ac2") {
+        audioStop();
+        audio3a5ac2.play();
+    }
+}
+
+function audioStop() {
+    audioc23a3a.pause();
+    audio3ac243.pause();
+    audioc2ab3a.pause();
+    audio3a5ac2.pause();
+    audioc23a3a.currentTime = 0;
+    audio3ac243.currentTime = 0;
+    audioc2ab3a.currentTime = 0;
+    audio3a5ac2.currentTime = 0;
+}
+
 // FUNCTIONS
 function getRandomInt() { // on fait une fonction pour tirer un nombre aléatoire
     return Math.floor(Math.random() * 4); // entre 0 et 3
@@ -40,15 +76,17 @@ function displayColorList() {
         if (y < colorList.length) { // tant qu'on a pas affiché la liste entiere
             displayColorList(); //on répète la boucle
         }
-    }, 1500); // 1 s color
+    }, 1050); // 1 s color
     setTimeout(function () {
         document.getElementById('colorList').style.background = colorList[y]; // on applique le background correspondant à la couleur [y] dans la liste
-    }, 500); // 0.5s white
+    }, 350); // 0.5s white
     userColorList = Array(); // on reset le tableau du joueur, car il doit tout deviner depuis le début
     z = 0; // on retourne a la premiere ligne du tableau pour le joueur
 }
 
 function nextUserColorPicker(color) { // on récup la couleur via le button correspondant
+    audioPlay(color);
+
     if (cardsLocked != true) { // on verifie que c'est au tour du joueur d'agir
         userColorList[z] = color; // on insere la couleur choisie par le joueur dans la ligne [z] du tableau joueur
         createChosenColorList(color); // on appelle la fonction qui rappelera au joueur ce qu'il vient de saisir (en cas de liste + longue surtout)
@@ -66,7 +104,8 @@ function nextUserColorPicker(color) { // on récup la couleur via le button corr
 }
 
 function compareLists() {
-    if (arraysEqual(colorList, userColorList)) { // On lange la fonction pour voir si les deux tableaux sont identiques
+
+    if (arraysEqual(colorList, userColorList)) { // On lance la fonction pour voir si les deux tableaux sont identiques
         points++; // le joueur marque un point
         document.getElementById('points').innerHTML = "Points : " + points; // on rafraichit l'affichage des points
         document.getElementById('displayMessage').innerHTML = "Bravo"; // On met un message
