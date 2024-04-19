@@ -1,5 +1,5 @@
 // VARIABLES
-let colors = ['red', 'green', 'yellow', 'blue']; // liste des couleurs
+let colors = ['#c23a3a', '#3ac243', '#c2ab3a', '#3a5ac2']; // liste des couleurs
 let none = ""; // Variable de texte vide pour masquer la phrase de displayMessage
 let l1 = 0; // Variable longueur tableau 1 qui sera utilisé pour comparer la taille des deux tableaux de couleurs
 let l2 = 0; // Variable longueur tableau 2 qui sera utilisé pour comparer la taille des deux tableaux de couleurs
@@ -113,7 +113,8 @@ function resetGame() {
     i = 0; // on reset le tableau colorList
 }
 function createChosenColorList(color) {
+    color = color.replace("#", "");
     let content = document.createElement("div"); // on créé une div
-    content.className = "memo c" + color; // avec une classe de la derniere couleur saisie par le joueur
+    content.className = "memo m-" + color; // avec une classe de la derniere couleur saisie par le joueur
     document.getElementById('displayMemo').appendChild(content); // et on push ça dans la zone voulue
 }
