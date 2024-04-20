@@ -69,8 +69,9 @@ function audioStop() {
 }
 
 // FUNCTIONS
+let difficulty = 4;
 function getRandomInt() { // on fait une fonction pour tirer un nombre aléatoire
-    return Math.floor(Math.random() * 8); // entre 0 et 7
+    return Math.floor(Math.random() * difficulty); // entre 0 et 7
 }
 
 function nextColorPicker() { // on fait une fonction pour remplir le tableau colorSuite > listes des couleurs à deviner
@@ -146,6 +147,7 @@ function arraysEqual(arr1, arr2) { // On vérifie que les tableaux sont identiqu
     }
     for (let i = 0; i < arr1.length; i++) { // Si ils ont la même longueur, alors 
         if (arr1[i] !== arr2[i]) { // on vérifie chaque ligne et si une est différente
+            document.getElementById('displayMessage').innerHTML = "Perdu ! Vous avez marqué " + points + " points"; // on affiche le message de fin
             return false; // on return false
         }
     }
@@ -167,10 +169,13 @@ function startGame() { // on lance le jeu donc
 function resetGame() {
     userColorList = new Array(); // on reset le tableau de couleurs choisies par le joueur
     colorList = new Array(); // on reset le tableau des couleurs à deviner
-    document.getElementById('displayMessage').innerHTML = "Perdu ! Vous avez marqué " + points + " points"; // on affiche le message de fin
+
     document.querySelectorAll(".memo").forEach(e => e.remove());
     document.getElementById('startGameButton').style.visibility = "visible"; // on réaffiche le bouton start
     i = 0; // on reset le tableau colorList
+    z = 0;
+    y = 0;
+    x = 0;
 }
 function createChosenColorList(color) {
     color = color.replace("#", "");
@@ -178,3 +183,43 @@ function createChosenColorList(color) {
     content.className = "memo m-" + color; // avec une classe de la derniere couleur saisie par le joueur
     document.getElementById('displayMemo').appendChild(content); // et on push ça dans la zone voulue
 }
+
+
+
+
+
+let colorButtonSelector = document.getElementsByClassName('button');
+function modeEasy() {
+    for (i = 7; i > 3; i--) {
+        colorButtonSelector[i].style.display = "none";
+    }
+    document.getElementById('userColorList').style.width = "100%";
+    document.getElementById('displayMessage').innerHTML = none; // on reset le message points
+    difficulty == 4;
+    resetGame();
+}
+//modeEasy();
+
+function modeNormal() {
+    modeHardOrDisplayAll();
+    for (i = 7; i > 5; i--) {
+        colorButtonSelector[i].style.display = "none";
+    }
+    document.getElementById('userColorList').style.width = "90%";
+    document.getElementById('displayMessage').innerHTML = none; // on reset le message points
+    difficulty == 6;
+    resetGame();
+
+}
+// modeNormal();
+
+function modeHardOrDisplayAll() {
+    for (i = 0; i < 8; i++) {
+        colorButtonSelector[i].style.display = "inline";
+    }
+    document.getElementById('userColorList').style.width = "100%";
+    document.getElementById('displayMessage').innerHTML = none; // on reset le message points
+    difficulty == 8;
+    resetGame();
+}
+// modeHardOrDisplayAll();

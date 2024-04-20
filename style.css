@@ -27,24 +27,41 @@ h1 {
 }
 
 #controls {
-  width: 200px;
+  width: 300px;
   height: auto;
   margin: auto;
 }
 
+#difficulty {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+#difficulty button {
+  height: 30px;
+  width: 30%;
+  border-radius: 15px;
+  border: solid var(--AccentColor) 2px;
+  background: var(--TxtColor);
+  color: var(--Background);
+  font-size: 18px;
+}
+
 #startGameButton {
-  width: 90%;
+  width: 60%;
   height: 50px;
   border-radius: 15px;
   border: solid var(--AccentColor) 2px;
   background: var(--TxtColor);
   color: var(--Background);
-  font-size: 20px;
   display: block;
   margin: auto;
   font-size: 25px;
-  margin-top: -10px;
+  margin-top: 35px;
 }
+
+
 
 #points {
   text-align: center;
@@ -191,6 +208,7 @@ button:hover {
 /*Animation titre*/
 
 @keyframes colorChange {
+
   0%,
   100% {
     color: var(--red);
