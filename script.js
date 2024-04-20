@@ -1,5 +1,5 @@
 // VARIABLES
-let colors = ['#c23a3a', '#3ac243', '#c2ab3a', '#3a5ac2', '#AC7AA2', '#E7782D']; // liste des couleurs
+let colors = ['#c23a3a', '#3ac243', '#c2ab3a', '#3a5ac2', '#AC7AA2', '#E7782D', '#81c3f0', '#ffb2ff']; // liste des couleurs
 let none = ""; // Variable de texte vide pour masquer la phrase de displayMessage
 let l1 = 0; // Variable longueur tableau 1 qui sera utilisé pour comparer la taille des deux tableaux de couleurs
 let l2 = 0; // Variable longueur tableau 2 qui sera utilisé pour comparer la taille des deux tableaux de couleurs
@@ -11,38 +11,41 @@ let z = 0; // compteur pour le tableau userColorList
 let i = 0; // compteur pour le tableau colorList
 let y = 0; // COmpteur pour l'affichage de l'intégralité du tableau colorlist
 
-// VARIABLES SOUND
+// SOUND PART //
 let audioc23a3a = new Audio("sounds/C.wav");
 let audio3ac243 = new Audio("sounds/D.wav");
 let audioc2ab3a = new Audio("sounds/E.wav");
 let audio3a5ac2 = new Audio("sounds/F.wav");
 let audioAC7AA2 = new Audio("sounds/G.wav");
 let audioE7782D = new Audio("sounds/A.wav");
+let audio81c3f0 = new Audio("sounds/B.wav");
+let audioffb2ff = new Audio("sounds/C2.wav");
 
 function audioPlay(color) {
+    audioStop();
     if (color == "#c23a3a") {
-        audioStop();
         audioc23a3a.play();
     }
     else if (color == "#3ac243") {
-        audioStop();
         audio3ac243.play();
     }
     else if (color == "#c2ab3a") {
-        audioStop();
         audioc2ab3a.play();
     }
     else if (color == "#3a5ac2") {
-        audioStop();
         audio3a5ac2.play();
     }
     else if (color == "#AC7AA2") {
-        audioStop();
         audioAC7AA2.play();
     }
     else if (color == "#E7782D") {
-        audioStop();
         audioE7782D.play();
+    }
+    else if (color == "#81c3f0") {
+        audio81c3f0.play();
+    }
+    else if (color == "#ffb2ff") {
+        audioffb2ff.play();
     }
 }
 
@@ -53,17 +56,21 @@ function audioStop() {
     audio3a5ac2.pause();
     audioAC7AA2.pause();
     audioE7782D.pause();
+    audio81c3f0.pause();
+    audioffb2ff.pause();
     audioc23a3a.currentTime = 0;
     audio3ac243.currentTime = 0;
     audioc2ab3a.currentTime = 0;
     audio3a5ac2.currentTime = 0;
     audioAC7AA2.currentTime = 0;
     audioE7782D.currentTime = 0;
+    audio81c3f0.currentTime = 0;
+    audioffb2ff.currentTime = 0;
 }
 
 // FUNCTIONS
 function getRandomInt() { // on fait une fonction pour tirer un nombre aléatoire
-    return Math.floor(Math.random() * 6); // entre 0 et 3
+    return Math.floor(Math.random() * 8); // entre 0 et 7
 }
 
 function nextColorPicker() { // on fait une fonction pour remplir le tableau colorSuite > listes des couleurs à deviner

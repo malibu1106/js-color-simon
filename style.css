@@ -8,6 +8,8 @@
   --blue: #3a5ac2;
   --purple: #AC7AA2;
   --orange: #E7782D;
+  --cyan: #81c3f0;
+  --magenta: #ffb2ff;
 }
 
 body {
@@ -70,7 +72,7 @@ h1 {
 }
 
 #userColorList {
-  width: 90%;
+  width: 100%;
   margin: auto;
   display: flex;
   justify-content: center;
@@ -116,6 +118,16 @@ h1 {
 .orange,
 .m-E7782D {
   background: var(--orange);
+}
+
+.cyan,
+.m-81c3f0 {
+  background: var(--cyan);
+}
+
+.magenta,
+.m-ffb2ff {
+  background: var(--magenta);
 }
 
 p {
