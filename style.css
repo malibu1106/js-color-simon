@@ -3,13 +3,13 @@
   --AccentColor: #d2d1bf;
   --TxtColor: #383838;
   --red: #c23a3a;
-  --green: #3ac243;
+  --green: #61ce68;
   --yellow: #c2ab3a;
   --blue: #3a5ac2;
-  --purple: #AC7AA2;
-  --orange: #E7782D;
+  --purple: #ac7aa2;
+  --orange: #e7782d;
   --cyan: #81c3f0;
-  --magenta: #ffb2ff;
+  --magenta: #ff99ff;
 }
 
 body {
@@ -164,7 +164,7 @@ button:hover {
 
 #displayMemo {
   width: 400px;
-  height: 100px;
+  min-height: 100px;
   margin: auto;
   display: flex;
   gap: 4px;
@@ -191,32 +191,51 @@ button:hover {
 /*Animation titre*/
 
 @keyframes colorChange {
-
   0%,
-  25% {
+  100% {
     color: var(--red);
     font-size: 120%;
     letter-spacing: -27px;
   }
 
-  25%,
-  50% {
+  12.5%,
+  25% {
     color: var(--yellow);
   }
 
-  50%,
-  75% {
+  25%,
+  37.5% {
     color: var(--green);
   }
 
-  75%,
-  100% {
+  37.5%,
+  50% {
     color: var(--blue);
+  }
+
+  50%,
+  62.5% {
+    color: var(--purple);
+  }
+
+  62.5%,
+  75% {
+    color: var(--orange);
+  }
+
+  75%,
+  87.5% {
+    color: var(--cyan);
+  }
+
+  87.5%,
+  100% {
+    color: var(--magenta);
   }
 }
 
 .letter {
-  animation: colorChange 1s;
+  animation: colorChange 2.5s;
   animation-delay: calc(0.25s * var(--i));
   animation-timing-function: steps(1);
   line-height: 0px;
