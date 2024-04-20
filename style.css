@@ -6,6 +6,8 @@
   --green: #3ac243;
   --yellow: #c2ab3a;
   --blue: #3a5ac2;
+  --purple: #AC7AA2;
+  --orange: #E7782D;
 }
 
 body {
@@ -53,7 +55,6 @@ h1 {
 
 #display {
   width: 400px;
-  height: 200px;
   margin: 30px auto;
 }
 
@@ -69,11 +70,11 @@ h1 {
 }
 
 #userColorList {
-  width: 100%;
-  height: 100px;
+  width: 90%;
+  margin: auto;
   display: flex;
   justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
   gap: 25px;
   margin-top: 35px;
 }
@@ -105,6 +106,16 @@ h1 {
 .blue,
 .m-3a5ac2 {
   background: var(--blue);
+}
+
+.purple,
+.m-AC7AA2 {
+  background: var(--purple);
+}
+
+.orange,
+.m-E7782D {
+  background: var(--orange);
 }
 
 p {

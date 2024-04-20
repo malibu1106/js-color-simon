@@ -1,5 +1,5 @@
 // VARIABLES
-let colors = ['#c23a3a', '#3ac243', '#c2ab3a', '#3a5ac2']; // liste des couleurs
+let colors = ['#c23a3a', '#3ac243', '#c2ab3a', '#3a5ac2', '#AC7AA2', '#E7782D']; // liste des couleurs
 let none = ""; // Variable de texte vide pour masquer la phrase de displayMessage
 let l1 = 0; // Variable longueur tableau 1 qui sera utilisé pour comparer la taille des deux tableaux de couleurs
 let l2 = 0; // Variable longueur tableau 2 qui sera utilisé pour comparer la taille des deux tableaux de couleurs
@@ -16,6 +16,8 @@ let audioc23a3a = new Audio("sounds/C.wav");
 let audio3ac243 = new Audio("sounds/D.wav");
 let audioc2ab3a = new Audio("sounds/E.wav");
 let audio3a5ac2 = new Audio("sounds/F.wav");
+let audioAC7AA2 = new Audio("sounds/G.wav");
+let audioE7782D = new Audio("sounds/A.wav");
 
 function audioPlay(color) {
     if (color == "#c23a3a") {
@@ -34,6 +36,14 @@ function audioPlay(color) {
         audioStop();
         audio3a5ac2.play();
     }
+    else if (color == "#AC7AA2") {
+        audioStop();
+        audioAC7AA2.play();
+    }
+    else if (color == "#E7782D") {
+        audioStop();
+        audioE7782D.play();
+    }
 }
 
 function audioStop() {
@@ -41,15 +51,19 @@ function audioStop() {
     audio3ac243.pause();
     audioc2ab3a.pause();
     audio3a5ac2.pause();
+    audioAC7AA2.pause();
+    audioE7782D.pause();
     audioc23a3a.currentTime = 0;
     audio3ac243.currentTime = 0;
     audioc2ab3a.currentTime = 0;
     audio3a5ac2.currentTime = 0;
+    audioAC7AA2.currentTime = 0;
+    audioE7782D.currentTime = 0;
 }
 
 // FUNCTIONS
 function getRandomInt() { // on fait une fonction pour tirer un nombre aléatoire
-    return Math.floor(Math.random() * 4); // entre 0 et 3
+    return Math.floor(Math.random() * 6); // entre 0 et 3
 }
 
 function nextColorPicker() { // on fait une fonction pour remplir le tableau colorSuite > listes des couleurs à deviner
