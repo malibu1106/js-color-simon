@@ -21,9 +21,15 @@ body {
 
 h1 {
   text-align: center;
-  font-size: 150px;
+  font-size: 6.25em;
   margin: 20px auto;
   color: var(--TxtColor);
+}
+
+@media only screen and (max-width: 480px) {
+  body {
+    font-size: 13.31vh;
+  }
 }
 
 #controls {
@@ -39,8 +45,8 @@ h1 {
 }
 
 #difficulty button {
-  height: 30px;
-  width: 30%;
+  height: 40px;
+  width: 100%;
   border-radius: 15px;
   border: solid var(--AccentColor) 2px;
   background: var(--TxtColor);
@@ -60,8 +66,6 @@ h1 {
   font-size: 25px;
   margin-top: 35px;
 }
-
-
 
 #points {
   text-align: center;
@@ -96,6 +100,7 @@ h1 {
   flex-wrap: wrap;
   gap: 25px;
   margin-top: 35px;
+  height: 150px;
 }
 
 .button {
@@ -208,12 +213,11 @@ button:hover {
 /*Animation titre*/
 
 @keyframes colorChange {
-
   0%,
   100% {
     color: var(--red);
     font-size: 120%;
-    letter-spacing: -27px;
+    letter-spacing: -15px;
   }
 
   12.5%,
@@ -261,7 +265,7 @@ button:hover {
 
 #color-memo {
   --i: 0;
-  letter-spacing: -27px;
+  letter-spacing: -15px;
   /* tips de Design UI: ça fait chic un letter-spacing négatif sur les titres*/
 }
 
